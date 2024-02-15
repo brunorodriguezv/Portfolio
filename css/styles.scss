@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Press+Start+2P&display=swap');
+
+// tamaño y tiempos de las estrellas en el background
+$starFieldWidth: 3000;
+$starFieldHeight: 5000;
+$starStartOffset: 600px;
+$starOneScrollDuration: 330s;
+$starTwoScrollDuration: 410s;
+$starThreeScrollDuration: 560s;
+$numStarOneStars: 3000;
+$numStarTwoStars: 1500;
+$numStarThreeStars: 1000;
+
+html {
+  scroll-behavior: smooth; 
+}
+
+
+// navbar
+
+body{
+  margin: 0;
+}
+
+.main-container >.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.main-container .navbar nav .menu-toggle {
+  display: none;
+}
+
+.main-container > section > nav{
+  width: 70%;
+  height: 3em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.main-container >.navbar > nav >.logo > a{
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3em;
+  font-size: 150%;
+}
+.main-container > section, .main-container > section > nav, .main-container section > nav > div, .main-container section > nav > div > ul {
+  display: flex;
+}
+
+.main-container > .navbar > nav > .btns {
+  margin-left: auto;
+  margin-right: 5em ;
+}
+
+.main-container > .navbar > nav > .btns > ul {
+  gap: 2.5em;
+}
+
+.main-container > .navbar > nav > .btns > ul > a {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  font-size: 85%;
+}
+
+
+@media (max-width: 675px){
+
+  body > .main-container {
+    height: auto;
+  }
+
+  .main-container > .navbar{
+    height: 3em;
+    min-width: 100%;
+  }
+
+  
+  body .main-container > .navbar nav{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  body .main-container .navbar nav .logo {
+    position: fixed;
+    left: 0;
+    margin: 0em;
+    margin-top: 0.5em;
+    justify-content: flex-start;
+  }
+
+  body .main-container .navbar nav .logo a{
+    padding-left: 0.5em;
+    margin: 0;
+  }
+
+
+  body .main-container > .landing > .sec > h1,
+  body .main-container > .landing > .thrd > h1{  
+    font-size: 270%;
+  }
+
+  body .main-container > .navbar nav .menu-toggle{
+    display: flex;
+    margin-right: 0.4em;
+    height: 2.5em;
+  }
+
+  .main-container > .navbar > nav > .btns {
+    position: absolute;
+    left: 0;
+    margin-top: 3em;
+    margin-right: 0;
+    height: 40vh;
+    min-width: 100%;
+    width: 100%;
+    background-color: #6b6b6b;
+  }
+
+  .main-container > .navbar > nav > .btns > ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+    transform: translateX(50%);
+  }
+
+  body .main-container .trayectory{
+    max-width: 100%;
+    flex-wrap: nowrap;  
+  }
+}
+
+
+
+@media (max-width: 990px) {
+
+  body .main-container {// container
+    height: auto;
+  }
+
+
+  /* LOGO */
+
+  .main-container .navbar nav .logo { 
+    position: fixed;
+    left: 0;
+    margin: 0.5em;
+    justify-content: flex-start;
+  }
+
+  .main-container .navbar nav .logo a{
+    padding-left: 2em;
+    margin-top: 0.4em;
+  }
+
+
+  /* BTNS */
+
+  .main-container .navbar nav .btns{
+    display: none;
+  }
+
+
+  /* MENU BTN*/
+
+  .main-container .navbar nav .menu-toggle{
+    display: flex;
+    position: fixed;
+    right: 0;
+    margin-right: 2em;
+    margin-top: 0.4em;
+  }
+
+  body .main-container > .navbar nav .menu-toggle .toggle-btn{
+    background: transparent;
+    border: none;
+    color: #fff;
+    border-radius: 40px;
+    width: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body .main-container > .navbar nav .menu-toggle .toggle-btn:hover{
+    background-color: #fff;
+    color: #0f0f0f;
+  }
+
+
+  /* MENU DROPDOWN */
+
+  .main-container .navbar .menu-drop {
+    position: fixed;
+    margin-top: 2.8em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #edaef9 1%, #81b1fa 120%);
+  }
+
+  .main-container .navbar .menu-drop ul {
+    padding: 0;
+    margin: 1em 0 0 0;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    
+  }
+
+  .main-container .navbar .menu-drop ul a {
+    margin-bottom: 2em;
+    padding: 5px;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    color: #0f0f0f;
+
+  }
+
+  .main-container .navbar .menu-drop ul a:hover {
+    background: linear-gradient(to bottom, #0f0f0f 5%, #353535 100%);
+    color: #fff;
+  }
+
+
+  /* LANDING */
+
+  .main-container .landing div{
+    display: flex;
+    max-width: 100%;
+  }
+
+  .main-container > .landing > .sec > h1,
+  .main-container > .landing > .thrd > h1{  
+    font-size: 500%;
+  }
+
+  body .main-container > .landing > .frd p{
+    display: flex;
+    text-align: center;
+  }
+
+
+  /* ABOUT ME */
+
+  .main-container .about-me h1,
+  .main-container .about-me div {
+    display: flex;
+    text-align: center;
+    max-width: 95%;
+  }
+
+
+  /* HABILITIES */
+
+  body .main-container .habilities .hb-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  body .main-container .habilities .hb-container div {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+
+  /* TRAYECTORY */
+  
+  body .main-container .trayectory .tyy-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body .main-container .trayectory .tyy-btns {
+    flex-direction: column;
+  }
+
+  body .main-container .trayectory ol {
+    padding: 0;
+  }
+}
+
+
+.main-container {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: linear-gradient(to bottom, #0f0f0f 5%, #353535 100%);
+}
+
+.main-container > .landing { //landing
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 70%;
+}   
+
+.landing > .sec > h1 {
+  font-size: 400%;
+  margin-bottom: 0em;
+  background-image: linear-gradient(to right, #edaef9, #81b1fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; 
+}
+
+.landing > .thrd >h1{
+    font-size: 400%;
+    padding-top: 0;
+    background-image: linear-gradient(to right, #edaef9, #81b1fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+}
+
+.main-container > .landing > .cv { //curriculum vitae
+  padding: 2em;
+  display: flex;
+}
+.main-container > .landing > .cv > a{
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(#edaef9, #81b1fa);
+  padding: 0.7em;
+  border-radius: 3px;
+  color: #0f0f0f;
+  transition: transform 0.3s;
+  font-size: 130%;
+}
+
+.main-container > .landing > .cv > .cv-dwnload:hover {
+  transform: scale(1.1);
+
+}
+
+.main-container > .landing > .social-media{ //socialmedia
+  display: flex;
+  gap: 2em;
+}
+
+.main-container > .landing > .social-media > a {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-container > .landing > .social-media > a > svg {
+  display: flex;
+  width: 2em;
+  transition: transform 0.3s;
+}
+
+.main-container > .landing > .social-media > a > svg:hover {
+  transform: scale(1.1);
+}
+
+/* ABOUT ME */ 
+
+.main-container > .about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.main-container > .about-me > h1 {
+  background-image: linear-gradient(to right, #edaef9, #81b1fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; 
+  font-family: 'Press Start 2P', cursive;
+  margin: 2em;
+}
+
+.main-container > .about-me > div {
+  width: 40em;
+  letter-spacing: 1.5px;
+  font-size: 105%;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* HABILITIES*/
+
+.main-container >.habilities {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7em;
+}
+
+.main-container >.habilities > .hb-title {
+  background-image: linear-gradient(to right, #edaef9, #81b1fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+
+.main-container > .habilities > .hb-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2em 10em;
+  max-width: 70%;
+
+}
+
+.main-container > .habilities > .hb-container > div {
+  min-width: 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container > .habilities > .hb-container > div > span > svg {
+  min-width: none;
+}
+
+.main-container > .habilities > .hb-container > div > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.main-container > .habilities > .hb-container > div > p > span {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  background-color: #0f0f0f;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* TRAYECTORY */
+
+
+
+
+/* BTNS*/
+
+
+.main-container .trayectory .tyy-btns{
+  display: flex;
+  gap: 1em;
+}
+
+.main-container .trayectory .tyy-btns button{
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(#edaef9, #81b1fa);
+  padding: 0.7em;
+  border-radius: 3px;
+  color: #0f0f0f;
+  transition: transform 0.3s;
+  font-size: 130%;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+}
+
+
+.main-container .trayectory .tyy-btns button:hover{
+  transform: scale(1.1);
+}
+
+.main-container .proyects .py-links a{
+  color: #fff;
+}
+
+
+
+/* CARDS */
+
+
+.main-container .trayectory {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container .trayectory .tyy-title{
+  background-image: linear-gradient(to right, #edaef9, #81b1fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; 
+  font-family: 'Press Start 2P', cursive;
+}
+
+.main-container .trayectory .tyy-btns {
+  padding: 3em;
+}
+
+.main-container .trayectory ol{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  list-style-type: none;
+  justify-content: center;
+
+}
+
+.main-container .trayectory ol li {
+  background-color: #0f0f0f;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 15em;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.main-container .trayectory ol li .header{
+  display: flex;
+}
+
+
+
+/* PROYECTS */
+
+
+.main-container .proyects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container .proyects .pys-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+
+}
+
+.main-container .proyects .pys-cards .py-card-container{
+  max-width: 15em;
+  padding: 0 10px 10px 10px;
+  background-color: #0f0f0f;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 5px;
+  column-gap: 3em;
+}
+
+.main-container .proyects .pys-cards .py-card-container .py-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+}
+
+.main-container .proyects .pys-cards .py-card-container .py-header .py-links {
+  display: flex;
+  gap: 0.8em;
+}
+
+.main-container .proyects .pys-cards .py-card-container .py-header .py-links a {
+  transition: transform 0.3s;
+}
+
+.main-container .proyects .pys-cards .py-card-container .py-header .py-links a:hover {
+  transform: scale(1.3);
+}
+
+
+.main-container .proyects .pys-cards .py-card-container .py-txt-cont {
+  padding-top: 5px;
+}
+
+.main-container .proyects .pys-cards .py-card-container .py-txt-cont .py-txt{
+  padding: 0px 0px 20px 0px;
+}
+
+.main-container .proyects .pys-cards .py-card-container .py-txt-cont .py-lgs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+
+}
+
+.main-container .proyects .pys-cards .py-card-container .py-txt-cont .py-lgs span {
+  background-color: #fff;
+  color: #0f0f0f;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+
+/* FOOTER */
+
+#footer #backTopBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0 1em 1em 0;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-image: linear-gradient(to bottom, #edaef9 1%, #81b1fa 120%);
+}
+
+#footer #backTopBtn:hover {
+  transform: scale(1.1);
+}
+
+.main-container #footer, .main-container #footer .textCont-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container #footer .textCont-footer {
+  color: #fff;
+}
+
+
+
+
+
+/* SCROLLBAR*/
+
+::-webkit-scrollbar {
+  width: 10px; 
+  background-color: rgb(128, 128, 128); 
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: black; 
+  border-radius: 5px; 
+}
+
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+
+
+
+/* Fin de estilos para el contenido principal/central*/
+
+
+/* COMIENZO DE ESTILOS PARA EL FONDO, RELACIONADO A MOVIMIENTOS*/
+@function create-stars($n) {
+  $stars: "#{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF";
+
+  @for $i from 2 through $n {
+    $stars: "#{$stars} , #{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF";
+  }
+  @return unquote($stars);
+}
+
+@mixin star-template($numStars, $starSize, $scrollSpeed) {
+  z-index: 10;
+  width: $starSize;
+  height: $starSize;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: create-stars($numStars);
+  animation: animStar $scrollSpeed linear infinite;
+  &:after {
+    content: " ";
+    top: -$starStartOffset;
+    width: $starSize;
+    height: $starSize;
+    border-radius: 50%;
+    position: absolute;
+    background: transparent;
+    box-shadow: create-stars($numStars);
+  }
+}
+
+.stars {
+  @include star-template($numStarOneStars, 1px, $starOneScrollDuration)
+}
+.stars2 {
+  @include star-template($numStarTwoStars, 2px, $starTwoScrollDuration)
+}
+.stars3 {
+  @include star-template($numStarThreeStars, 3px, $starThreeScrollDuration)
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px)
+  }
+  to {
+    transform: translateY(-#{$starFieldHeight}px) translateX(-#{$starFieldWidth}px)
+  }
+}
+
+/* FIN DE ESTILOS PARA EL FONDO, RELACIONADO A MOVIMIENTOS*/
